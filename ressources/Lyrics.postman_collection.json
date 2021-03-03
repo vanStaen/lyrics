@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "f65b5ce6-c6d8-49d9-a8f9-0fe7b2a6cf90",
+		"name": "Lyrics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LYRICS: localhost:5007/rows",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5008/rows/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"rows",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LYRICS: localhost:5007/rows",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5008/rows/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"rows",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LYRICS: localhost:5002/rows",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"text\": \"this is a test\",\n   \"tab\": true,\n   \"songid\" : 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5008/rows/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"rows",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LYRICS: localhost:5002/rows",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"text\": \"this is a patch\",\n   \"tab\": false,\n   \"songid\" : 3,\n   \"position\" : 12\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5008/rows/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"rows",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LYRICS: localhost:5007/songs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5008/songs/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"songs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LYRICS: localhost:5007/songs",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5008/songs/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"songs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LYRICS: localhost:5002/songs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"title\": \"this is a test song\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5008/songs/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"songs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LYRICS: localhost:5002/songs",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"title\": \"this is a patch\",\n   \"archived\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5008/songs/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5008",
+					"path": [
+						"songs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
