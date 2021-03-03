@@ -60,7 +60,6 @@ router.post("/", async (req, res) => {
     const tab = req.body.tab ? req.body.tab : false;
     const songid = req.body.songid ? req.body.songid : null;
     const insertRowQuery = `INSERT INTO rows (text, position, tab, songid) VALUES ('${text}', ${position}, ${tab}, ${songid})`;
-    console.log(insertRowQuery);
     try {
       await client.query(insertRowQuery);
       res.status(201).json({ success: "Success" });
