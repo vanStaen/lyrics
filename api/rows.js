@@ -11,14 +11,14 @@ client.connect(err => {
     if (err) {
         console.error('connection error', err.stack)
     } else {
-        console.log('statistic API:', 'Connected to postgres db!')
+        console.log('rows API:', 'Connected to postgres db!')
     }
 })
 
-// GET all data from statistic
+// GET all data from rows
 router.get("/", async (req, res) => {
     try {
-        const activities = await client.query('SELECT * FROM lyrics ORDER BY year ASC;');
+        const activities = await client.query('SELECT * FROM rows ORDER BY year ASC;');
         res.status(201).json(activities.rows);
     } catch (err) {
         res.status(400).json({

@@ -27,7 +27,8 @@ app.use(express.static(path.join(__dirname, "build")));
 app.get('/', (req, res) => { res.sendFile(path.join(__dirname, "build", "index.html")); });
 
 // Router to API endpoints
-app.use("/lyrics", require("./api/lyrics"));
+app.use("/rows", require("./api/rows"));
+app.use("/songs", require("./api/songs"));
 
 // Listen on a port
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
