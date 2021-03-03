@@ -1,12 +1,8 @@
-# Watchlist
+# Lyrics
 
 ## To-dos:
  
-- [ ] Create rows Endpoint
-    - [x] GET
-    - [x] DELETE
-    - [x] POST
-    - [ ] UPDATE
+- [x] Create rows Endpoint
 - [ ] Create songs Endpoint
     - [x] GET
     - [ ] DELETE
@@ -17,4 +13,5 @@
 
 - [x] Create Table rows&songs in Database
 - [x] Initialize Project Folder for Back- and Frontend
+- [x] Create rows Endpoint
 

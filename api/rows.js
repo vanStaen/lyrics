@@ -71,4 +71,42 @@ router.post("/", async (req, res) => {
     }
   });
 
+
+// PATCH single row (based on id)
+router.patch("/:id", async (req, res) => {
+
+  let updateField = '';
+  if (req.body.text) {
+    updateField = updateField + "text='" + req.body.text + "',";
+  }
+  if (req.body.position) {
+    updateField = updateField + "position='" + req.body.position + "',";
+  }
+  if (req.body.tab !== undefined) {
+    updateField = updateField + "tab='" + req.body.tab + "',";
+  }
+  if (req.body.songid) {
+    updateField = updateField + "songid='" + req.body.songid + "',";
+  }
+  const updateFieldEdited = updateField.slice(0, -1) // delete the last comma
+  const updateQuery = 'UPDATE rows SET ' + updateFieldEdited + ' WHERE id=' + req.params.id;
+  try {
+    const rows = await client.query(updateQuery);
+    if (rows.rowCount > 0) {
+      res.status(200).json({
+        success: `Row with id#${req.params.id} has been updated.`,
+      });
+    } else {
+      res.status(400).json({
+        error: `No row found with id#${req.params.id}`,
+      });
+    }
+  } catch (err) {
+    res.status(400).json({
+      error: `${err}`,
+    });
+  }
+
+});
+
 module.exports = router;
